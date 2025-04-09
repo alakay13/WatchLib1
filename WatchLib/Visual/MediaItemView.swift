@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct MediaItemView: View {
+    let item: MediaItem
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(item.title)
+                    .font(.body)
+
+                Text(item.genre)
+                    .font(.footnote)
+                    .foregroundColor(Color(.secondaryLabel))
+            }
+            
+            Spacer()
+        }
     }
 }
 
-#Preview {
-    MediaItemView()
+struct MediaItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        MediaItemView(item: .init(
+            id: "123",
+            title: "PlaceholderName",
+            genre: "Action, Tragedy",
+            comments: "Broke my heart </3"))
+    }
 }

@@ -10,4 +10,8 @@
 import Foundation
 class MediaItemViewViewModel: ObservableObject {
     init() {}
+    
+    func delete(id: String){
+        
+    }
 }

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct MediaItem: Codable, Identifiable {
+    let id: String
+    let title: String
+    let genre: String
+    let comments: String
+    
+}

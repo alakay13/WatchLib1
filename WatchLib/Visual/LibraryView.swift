@@ -4,24 +4,33 @@
 //
 //  Created by Alaa Khan on 2/12/25.
 //
-
+import FirebaseFirestore
 import SwiftUI
 
 struct LibraryView: View {
     @StateObject var viewModel = LibraryViewViewModel()
+    @FirestoreQuery var items: [MediaItem]
     
-    private let userID: String
     init(userID: String) {
-        self.userID = userID
-
+        self._items = FirestoreQuery(collectionPath: "users/\(userID)/mediaItems")
     }
-    
     
     var body: some View {
         NavigationView {
             VStack {
-                
+                List(items) { item in
+                    MediaItemView(item: item)
+                        .swipeActions {
+                            Button {
+                                viewModel.delete(id: item.id)
+                            } label: {
+                                Text("Delete")
+                            }
+                        }
+                }
+                .listStyle(PlainListStyle())
             }
+    
             .navigationTitle("Library")
             .toolbar {
                 Button{

@@ -20,7 +20,7 @@ struct HeaderView: View {
                 .rotationEffect(Angle(degrees: angle))
             
             VStack {
-                Text("My Watch List")
+                Text("Track TV")
                     .font(.system(size: 45))
                     .foregroundColor(Color.white)
                     .bold()

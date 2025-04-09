@@ -15,7 +15,7 @@ struct LoginView: View {
         NavigationView {
             VStack {
                 //Header
-                HeaderView(title: "My Watch List", subtitle: "", angle: 15, background: .pink)
+                HeaderView(title: "Track TV", subtitle: "", angle: 15, background: .pink)
                 
                 
                 //Login fields

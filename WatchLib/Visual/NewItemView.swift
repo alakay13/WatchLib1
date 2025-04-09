@@ -37,7 +37,7 @@ struct NewItemView: View {
                 
                 //Button
                 WLButton(title: "Save",
-                         ackground: .red) {
+                         background: .red) {
                         viewModel.save()
                         newItemPresented = false
                 }
